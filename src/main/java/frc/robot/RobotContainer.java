@@ -32,6 +32,7 @@ import edu.wpi.first.wpilibj2.command.RunCommand;
 
 import frc.robot.subsystems.*;
 import frc.robot.commands.*;
+import frc.robot.commands.autonomous.AutoPaths;
 
 /**
  * This class is where the bulk of the robot should be declared. Since
@@ -90,9 +91,9 @@ public class RobotContainer {
 
     // Put brake mode on a button!
     driveRB.onTrue(
-        new InstantCommand(m_swerve::setBrakeOn, m_swerve)
-      ).onFalse(
         new InstantCommand(m_swerve::setBrakeOff, m_swerve)
+      ).onFalse(
+        new InstantCommand(m_swerve::setBrakeOn, m_swerve)
       );
   }
 
