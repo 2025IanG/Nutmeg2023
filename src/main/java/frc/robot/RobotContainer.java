@@ -110,7 +110,7 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand( String a) {
 
-    Command autoCommand = new AutoPaths(m_swerve).PlaceHolder();
+    Command autoCommand = new AutoPaths(m_swerve).Square();
 
     return autoCommand;
   }

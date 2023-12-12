@@ -9,7 +9,6 @@ import frc.robot.subsystems.*;
 // import jdk.vm.ci.code.InstalledCode;
 import frc.robot.commands.*;
 import frc.robot.subsystems.SwerveDriveModule;
-import edu.wpi.first.wpilibj2.command.WaitCommand;
  
 /** 
  * Point all the wheels toward a given angle.  Don't drive anywhere or move the chassis at all.
@@ -21,6 +20,20 @@ public class AutoPaths { // extends CommandBase {
  
     public AutoPaths(SwerveDriveSubsystem swerve) {
         m_swerve = swerve;
+    }
+
+    public Command Square() {
+
+        return new SequentialCommandGroup(
+            new DriveForDist(m_swerve, 0, 60, "0")
+            // new SetPoseAngle(m_swerve, 90),
+            // new DriveForDist(m_swerve, 60, 0, "0"), 
+            // new SetPoseAngle(m_swerve, 180),
+            // new DriveForDist(m_swerve, 0, -60, "0"),
+            // new DriveForDist(m_swerve, -60, 0, "0"),
+            // new SetPoseAngle(m_swerve, 90)
+        );
+
     }
 
     public Command PlaceHolder() {
